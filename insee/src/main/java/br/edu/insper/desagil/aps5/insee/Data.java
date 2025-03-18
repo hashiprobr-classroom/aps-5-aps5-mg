@@ -1,7 +1,6 @@
 package br.edu.insper.desagil.aps5.insee;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Data extends Referencia{
