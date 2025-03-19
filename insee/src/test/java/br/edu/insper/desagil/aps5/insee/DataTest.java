@@ -19,4 +19,35 @@ public class DataTest {
         assertEquals(1, data.getMes());
         assertEquals(1970, data.getAno());
     }
+    @Test
+    void naoAtualizaMenor(){
+        data.atualiza(1969, 0,0);
+        assertEquals(1,data.getDia());
+        assertEquals(1, data.getMes());
+        assertEquals(1970, data.getAno());
+    }
+    @Test
+    void atualizaMaior(){
+        data.atualiza(2024, 13,32);
+        assertEquals(31,data.getDia());
+        assertEquals(12, data.getMes());
+        assertEquals(2024, data.getAno());
+    }
+    @Test
+    void atualiza(){
+        data.atualiza(2024, 9,26);
+        assertEquals(26,data.getDia());
+        assertEquals(9, data.getMes());
+        assertEquals(2024, data.getAno());
+    }
+    @Test
+    void comoZero(){
+        assertEquals(0,data.comoInteiro());
+    }
+    @Test
+    void comoAgora(){
+        data.atualiza(2024, 9, 26);
+        assertEquals(19978,data.comoInteiro());
+    }
+
 }

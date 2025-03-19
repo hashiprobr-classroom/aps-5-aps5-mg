@@ -41,26 +41,26 @@ public class Data extends Referencia{
         return dia;
     }
 
-    public void atualiza(int a, int m, int d){
-        if (a<1970){
-            a=1970;
+    public void atualiza(int ano, int mes, int dia){
+        if (ano<1970){
+            ano=1970;
         }
-        if (m<1){
-            m=1;
+        if (mes<1){
+            mes=1;
         }
-        else if (m>12){
-            m=12;
+        else if (mes>12){
+            mes=12;
         }
-        if (d<1){
-            d=1;
+        if (dia<1){
+            dia=1;
         }
-        if (d>limites.get(m)){
-            d=limites.get(m);
+        if (dia>limites.get(mes)){
+            dia=limites.get(mes);
 
         }
-        this.ano=a;
-        this.mes=m;
-        this.dia=d;
+        this.ano=ano;
+        this.mes=mes;
+        this.dia=dia;
     }
     @Override
     public int comoInteiro(){
@@ -69,7 +69,7 @@ public class Data extends Referencia{
          for (int m=1; m<this.mes; m++){
              soma+=limites.get(m);
          }
-         soma+=dia;
+         soma+=(dia-1);
 
         return soma;
     }
