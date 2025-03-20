@@ -29,12 +29,7 @@ public class Item {
         }
 
         if (!ofertas.isEmpty()) {
-            int maior = 0;
-            for (int i = 1; i < ofertas.size(); i++) {
-                if (ofertas.get(maior) < ofertas.get(i)) {
-                    maior = i;
-                }
-            }
+            int maior = getMaior();
             if (oferta <= ofertas.get(maior)) {
                 return;
             }
@@ -51,13 +46,18 @@ public class Item {
         if (ofertas.isEmpty()) {
             System.out.println("Nenhum lance foi feito ainda!");
         } else {
-            int maior = 0;
-            for (int i = 1; i < ofertas.size(); i++) {
-                if (ofertas.get(maior) < ofertas.get(i)) {
-                    maior = i;
-                }
-            }
+            int maior = getMaior();
             System.out.println(compradores.get(maior) + " ofereceu " + ofertas.get(maior) + " (" + momentos.toString() + ")");
         }
+    }
+
+    private int getMaior() {
+        int maior = 0;
+        for (int i = 1; i < ofertas.size(); i++) {
+            if (ofertas.get(maior) < ofertas.get(i)) {
+                maior = i;
+            }
+        }
+        return maior;
     }
 }
